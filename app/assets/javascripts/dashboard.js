@@ -54,25 +54,20 @@ $(".dashboard.index").ready(function() {
     });
   });
 
-  //--------------- Get Tweets ----------------
+
 
   function getTweetsAndPost() {
-    getAllTweets(function(tweets) {
+
+    getTweets(function(tweets) {
       $('.feed').text('');
       $.each(tweets, function(index) {
         if (tweets[index]['username'] === currentUser) {
-          var html = '<div class="tweet col-xs-12"> \
-            <a class="tweet-username" href="#">' + tweets[index]['username'] + '</a> \
-            <a class="tweet-screenName" href="#">@' + tweets[index]['username'] + '</a> \
-            <a class="delete-tweet" id="' + tweets[index]['id'] + '" href="#">Delete</a>'
 
-          if (tweets[index]['image'] !== undefined) {
-            html += '<img src="' + tweets[index]['image'] + '" class="img img-responsive">'
-          }
-
-          html += '<p>' + tweets[index]['message'] + '</p> \
-            </div>'
-          $('.feed').prepend(html);
+          var html = `<div className="tweet border border-light p-2"> +
+          <div><span className="username mr-5">${tweets[index]['username']}</span><span className="screenName">@${tweets[index]['username']}</span></div>
+          <div className="d-flex justify-content-between mt-3"><span className="post">Post 1</span><a className="delete-tweet" id="${tweets[index]['id']}" href="#">Delete Tweet</a></div>
+        </div>`;
+        
         }
         else {
           var html = '<div class="tweet col-xs-12"> \
@@ -85,7 +80,7 @@ $(".dashboard.index").ready(function() {
 
           html += '<p>' + tweets[index]['message'] + '</p> \
             </div>'
-          $('.feed').prepend(html);
+          $('.tweets').prepend(html);
         }
       });
     });
@@ -97,50 +92,13 @@ $(".dashboard.index").ready(function() {
   });
 
   $(document).on('click', '.delete-tweet', function() {
-    deleteOneTweet($(this).attr('id'), function() {
+    deleteTweet($(this).attr('id'), function() {
       getTweetsAndPost();
     });
   });
 
 
-  function getUserTweetsAndPost(username) {
-    getUserTweets(username, function(response) {
-      $('.feed').text('');
-      console.log(response);
-      $.each(response, function(index) {
-        if (response[index]['username'] === currentUser) {
-          $('.feed').prepend(
-            '<div class="tweet col-xs-12"> \
-            <a class="tweet-username" href="#">' + response[index]['username'] + '</a> \
-            <a class="tweet-screenName" href="#">@' + response[index]['username'] + '</a> \
-            <p>' + response[index]['message'] + '</p> \
-            <a class="delete-tweet" id="' + response[index]['id'] + '" href="#">Delete</a> \
-            </div>'
-          );
-        }
-        else {
-          $('.feed').prepend(
-            '<div class="tweet col-xs-12"> \
-            <a class="tweet-username" href="#">' + response[index]['username'] + '</a> \
-            <a class="tweet-screenName" href="#">@' + response[index]['username'] + '</a> \
-            <p>' + response[index]['message'] + '</p> \
-            </div>'
-          );
-        }
-      });
-    });
-  }
-
-  $(document).on('click', '.tweet-username', function() {
-    getUserTweetsAndPost($(this).text());
-
-  });
-
-  $(document).on('click', '.username', function() {
-    getUserTweetsAndPost($(this).text());
-
-  });
-
+  
 
 
   getTweetsAndPost();
