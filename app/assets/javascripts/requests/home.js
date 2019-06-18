@@ -1,4 +1,4 @@
-$(".twitter.index").ready(function() {
+$(".home.index").ready(function() {
 
   function authRedirect() {
     authenticate(function(response) {

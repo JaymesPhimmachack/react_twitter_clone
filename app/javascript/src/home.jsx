@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 const Home = () => (
   <div className="container">
     <div className="row">
-      <div className="col-xs-12 col-md-6 mh-100">
+      <div className="col-xs-12 col-md-6 mh-100 ">
         <div className="align-middle">
           <p>Follow your interests.</p>
           <p>Hear what people are talking about.</p>
@@ -16,11 +16,11 @@ const Home = () => (
           <form>
             <input className="log-in username" type="text" placeholder="Username" />
             <input className="log-in password" type="password" placeholder="Password" />
-            <button id="log-in-btn">Log in</button>
+            <button id="log-in-btn btn btn-primary">Log in</button>
           </form>
         </div>
         <div>
-        <div>image</div>
+        <div>twitter bird image</div>
           <p>See what’s happening in</p>
           <p>the world right now</p>
           <p>Join Twitter today.</p>
@@ -28,7 +28,7 @@ const Home = () => (
             <input className="sign-up username" type="text" placeholder="Username" />
             <input className="sign-up email" type="text" placeholder="Email" />
             <input className="sign-up password" type="password" placeholder="Password" />
-            <button id="sign-up-btn" >Sign up</button>
+            <button id="sign-up-btn btn btn-outline-primary" >Sign up</button>
           </form>
         </div>
       </div>

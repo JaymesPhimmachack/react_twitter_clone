@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 
 const Dashboard = () => (
   <div className="container">
-    <nav  className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav  className="navbar navbar-expand-lg navbar-light bg-light mb-5">
   
 
     <ul  className="navbar-nav mr-auto">
@@ -21,7 +21,7 @@ const Dashboard = () => (
     </ul>  
     <a className="navbar-brand" href="#">Twitter</a>
     <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+      <input className="form-control mr-sm-2 search" type="search" placeholder="Search Twitter" aria-label="Search" />
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <div>
@@ -32,9 +32,11 @@ const Dashboard = () => (
     <div  className="row">
       <div  className="col-xs-12 col-md-4">
         <div className="mb-5 mt-3">
-          <p>UserName1</p>
-          <p>UserName1@example.com</p>
-          <div className="tweet-status">
+          <div className="user p-2">
+          <p className="username">UserName1</p>
+          <p className="screenName">@UserName1</p>
+          </div>
+          <div className="tweet-status p-2">
               <div className="d-inline-block mr-2">
                 <p>Tweets</p>
                 <p>0</p>
@@ -49,7 +51,7 @@ const Dashboard = () => (
               </div>
           </div>
         </div>
-        <div>
+        <div className="p-2">
           <p>Trends for you</p>
           <p>#Ruby</p>
           <p>#API</p>
@@ -65,13 +67,17 @@ const Dashboard = () => (
  
         <div className="mt-3">
           <div>
-              <textarea className="w-80"></textarea>
-              <a className="btn btn-primary">Tweet</a>
+              <textarea className="w-100 post-input"></textarea>
+              <div>
+              <button className="btn btn-primary text-white" id="post-tweet-btn">Tweet</button> 
+                <span className="post-char-counter"></span> characters
+              </div>
+              
           </div>
-           <div className="tweets">
-               <div className="tweet">
-                 <div><span className="username">UserName1</span><span className="email">UserName1@example.com</span></div>
-                 <div><span className="post">Post 1</span><a>Delete</a></div>
+           <div className="tweets mt-5">
+               <div className="tweet border border-light p-2">
+                 <div><span className="username mr-5">UserName1</span><span className="screenName">@UserName1</span></div>
+                 <div className="d-flex justify-content-between mt-3"><span className="post">Post 1</span><a className="delete-tweet">Delete Tweet</a></div>
                </div>
            </div>
         </div>
