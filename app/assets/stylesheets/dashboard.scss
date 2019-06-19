@@ -1,14 +1,23 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$bg-color: #e6ecf0;
+$primary-color: #1ea1f2;
+
 body {
-  background: #e6ecf0;
+  background: $bg-color;
 }
 
 .user {
-  background: #1ea1f2;
+  background: $primary-color;
 }
 
-.search {
-  background: #1ea1f2;
+.search-btn {
+  border: 1px solid $primary-color;
+  color: $primary-color;
+}
+
+.search-btn:hover {
+  background: $primary-color;
+  color: #fff;
 }

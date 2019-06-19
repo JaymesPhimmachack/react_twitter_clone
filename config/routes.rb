@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     post 'users'          => 'users#create'
 
     # SESSIONS 
-    post 'sessions'        => 'sessions/create'
-    get 'authenticated'    => 'sessions/#authenticated'
+    post 'sessions'        => 'sessions#create'
+    get 'authenticated'    => 'sessions#authenticated'
     delete 'sessions'     => 'sessions#destroy'
 
     # TWEETS
@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     delete 'tweets/:id'   => 'tweets#destroy'
     get 'tweets'          => 'tweets#index'
   end  
-  root 'twitter#home'  
+  root 'home#index'  
   # Redirect all other paths to index page
 
-  get 'dashboard'         => 'twitter#dashboard'
+  get '/dashboard'         => 'dashboard#index'
   
 end

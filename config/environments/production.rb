@@ -1,6 +1,15 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Disable Rail's static asset server
+  config.serve_static_assets = false
+  
+  # Compress Javacript and CSS
+  config.assets.compress = true
+  
+  # Generate digests for assets URLs
+  config.assets.digest = true
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
