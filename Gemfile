@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+  # Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -43,8 +46,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   
-  # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+
 end
 
 group :development do
